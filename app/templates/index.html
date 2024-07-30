@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Quotes Dashboard</h1>
+    </header>
+    <main>
+        {% for quote in quotes %}
+            <div class="quote">
+                <blockquote>{{ quote.text }}</blockquote>
+                <p class="author">- {{ quote.author }}</p>
+                <p class="tags">Tags: {{ quote.tags }}</p>
+            </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
